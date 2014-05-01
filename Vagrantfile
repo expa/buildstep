@@ -25,6 +25,7 @@ echo provisioning...
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 xargs apt-get install -y --force-yes < /root/buildstep/stack/packages.txt
+apt-get install -y --force-yes python-setuptools
 apt-get clean
 easy_install pip
 pip install s3cmd
