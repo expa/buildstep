@@ -1,6 +1,11 @@
 #/bin/bash
+[[ -f /tmp/tgz ]] && rm /tmp/tgz
 ID=$(docker run -d progrium/buildstep /bin/sh)
 SHORTID=${ID:0:10}
-docker export $ID | gzip -9c > /tmp/tgz
-s3cmd put /tmp/tgz s3://expa-dokku/expa_buildstep_${SHORTID}.tgz
-s3cmd setacl -P s3://expa-dokku/expa_buildstep_${SHORTID}.tgz
+DESTINATION=s3://expa-dokku/expa_buildstep_${SHORTID}.tgz
+
+echo "exporting $ID"
+docker export $ID | gzip -9c > /tmp/tgz || exit 1
+
+echo "uploading to $DESTINATION"
+aws s3 cp /tmp/tgz $DESTINATION --acl public-read
