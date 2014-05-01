@@ -25,3 +25,11 @@ xargs -L 1 git clone --depth=1 < /build/buildpacks.txt
 update-alternatives --set ruby /usr/bin/ruby1.9.1
 update-alternatives --set gem /usr/bin/gem1.9.1
 gem install bundler
+
+#
+# PIL library patch
+#
+
+for file in libjpeg.so libfreetype.so libz.so; do
+  [[ -f /usr/lib/x86_64-linux-gnu/${file} ]] && ln -s /usr/lib/x86_64-linux-gnu/${file} /usr/lib
+done
