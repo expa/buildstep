@@ -29,6 +29,7 @@ libxslt-dev
 mercurial
 mysql-client
 netcat-openbsd
+net-tools
 nodejs
 openjdk-6-jdk
 openjdk-6-jre-headless
