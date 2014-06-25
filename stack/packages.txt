@@ -45,3 +45,14 @@ sqlite3
 supervisor
 telnet
 zlib1g-dev
+ipython
+ipython-notebook
+python-matplotlib
+python-nose
+python-numpy
+python-pandas
+python-scipy
+python-sympy
+gfortran
+libblas-dev
+liblapack-dev

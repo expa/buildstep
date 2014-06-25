@@ -2,7 +2,7 @@
 [[ -f /tmp/tgz ]] && rm /tmp/tgz
 ID=$(docker run -d progrium/buildstep /bin/sh)
 SHORTID=${ID:0:10}
-DESTINATION=s3://expa-dokku/expa_buildstep_${SHORTID}.tgz
+DESTINATION=s3://expa-dokku/expa_scipy_buildstep_${SHORTID}.tgz
 
 echo "exporting $ID"
 docker export $ID | gzip -9c > /tmp/tgz || exit 1
