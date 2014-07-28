@@ -4,10 +4,10 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-box      = 'precise64'
-url      = 'http://files.vagrantup.com/precise64.box'
+box      = 'raring'
+url      = 'https://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box'
 hostname = 'vagrantdev-buildstep'
-ram      = '256'
+ram      = '512'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = box
@@ -16,7 +16,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :public_network
 
   config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--name", hostname]
+    v.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
     v.customize ["modifyvm", :id, "--memory", ram]
   end
 
