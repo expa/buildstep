@@ -1,6 +1,6 @@
 #/bin/bash
-echo -n "Are you sure you want to upload a new buildstep image? [yn] "
-read -n 1 confirm
+read -s -n 1 -p "Are you sure you want to upload a new buildstep image? [yn] " confirm
+echo ""
 [[ "$confirm" = "y" ]] || exit 0
 
 [[ -e '/root/.awsrc' ]] && source /root/.awsrc || echo "no awsrc found. upload may fail."
