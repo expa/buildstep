@@ -3,6 +3,8 @@ echo -n "Are you sure you want to upload a new buildstep image? [yn] "
 read -n 1 confirm
 [[ "$confirm" = "y" ]] || exit 0
 
+[[ -e '/root/.awsrc' ]] && source /root/.awsrc || echo "no awsrc found. upload may fail."
+
 [[ -f /tmp/tgz ]] && rm /tmp/tgz
 ID=$(docker run -d progrium/buildstep /bin/sh)
 SHORTID=${ID:0:10}
