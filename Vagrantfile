@@ -25,15 +25,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   $script = <<SCRIPT
 echo provisioning...
+echo "*** hack to 'fix' https://github.com/mitchellh/vagrant/issues/3860 ***"
 sed --in-place -e "s:post-up route del default dev \\$IFACE$:post-up route del default dev \\$IFACE || true:g" /etc/network/interfaces
+echo "*** end hack ***"
 export DEBIAN_FRONTEND=noninteractive
-apt-get update
-xargs apt-get install -y --force-yes < /root/buildstep/stack/packages.txt
+cd /root/buildstep && make docker
 apt-get install -y --force-yes python-setuptools
-apt-get clean
 easy_install pip
 pip install awscli
-cd /root/buildstep && make docker
 SCRIPT
 
   config.vm.provision "shell", inline: $script
