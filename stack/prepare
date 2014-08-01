@@ -37,3 +37,5 @@ gem install bundler
 for file in libjpeg.so libfreetype.so libz.so; do
   [[ -f /usr/lib/x86_64-linux-gnu/${file} ]] && ln -s /usr/lib/x86_64-linux-gnu/${file} /usr/lib
 done
+
+[[ -d /usr/include/freetype2 ]] && ln -s /usr/include/freetype2 /usr/include/freetype2/freetype
