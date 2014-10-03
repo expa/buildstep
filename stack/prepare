@@ -39,3 +39,8 @@ for file in libjpeg.so libfreetype.so libz.so; do
 done
 
 [[ -d /usr/include/freetype2 ]] && ln -s /usr/include/freetype2 /usr/include/freetype2/freetype
+
+mkdir -p /usr/local/emr && \
+	cd /usr/local/emr && \
+	wget http://elasticmapreduce.s3.amazonaws.com/elastic-mapreduce-ruby.zip && \
+	unzip elastic-mapreduce-ruby.zip

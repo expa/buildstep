@@ -45,4 +45,5 @@ socat
 sqlite3
 supervisor
 telnet
+unzip
 zlib1g-dev
