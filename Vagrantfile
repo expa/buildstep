@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = box
   config.vm.box_url = url
   config.vm.synced_folder ".", "/root/buildstep"
-  config.vm.network :public_network
+  config.vm.network :private_network, type: "dhcp"
   config.vm.hostname = hostname
 
   config.vm.provider "virtualbox" do |v|
