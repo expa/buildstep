@@ -45,6 +45,7 @@ socat
 sqlite3
 supervisor
 telnet
+wget
 zlib1g-dev
 ipython
 ipython-notebook

@@ -40,7 +40,11 @@ done
 
 [[ -d /usr/include/freetype2 ]] && ln -s /usr/include/freetype2 /usr/include/freetype2/freetype
 
-mkdir -p /usr/local/emr && \
-	cd /usr/local/emr && \
-	wget http://elasticmapreduce.s3.amazonaws.com/elastic-mapreduce-ruby.zip && \
-	unzip elastic-mapreduce-ruby.zip
+#
+# rethinkdb
+#
+
+source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/rethinkdb.list
+wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | apt-key add -
+apt-get update
+apt-get install -y --force-yes rethinkdb=1.13.3*
