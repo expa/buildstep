@@ -40,6 +40,7 @@ openssh-server
 postgresql
 postgresql-server-dev-9.3
 python-dev
+rethinkdb=1.14.1*
 ruby-dev
 socat
 sqlite3
