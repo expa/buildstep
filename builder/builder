@@ -71,5 +71,5 @@ rm -rf $app_dir
 mv $build_root $app_dir
 
 # Clean up
-rm -rf /build/
+rm -rf /build/*
 rm -rf /tmp/*
