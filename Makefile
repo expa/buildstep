@@ -19,12 +19,13 @@ aufs:
 clean:
 	@$(QUIET) docker ps -a | awk '{ print $$1 }' | grep -v CONTAINER | xargs -r docker kill
 	@$(QUIET) docker ps -a | awk '{ print $$1 }' | grep -v CONTAINER | xargs -r docker rm -f
+	@$(QUIET) docker images --filter="dangling=true" | grep -v ubuntu | awk '{ print $$3 }' | grep -v "IMAGE" | xargs -r docker rmi
 	@$(QUIET) docker images | grep -v ubuntu | awk '{ print $$3 }' | grep -v "IMAGE" | xargs -r docker rmi
 
-build:
+build: clean
 	@$(QUIET) rm -f ./stack/.scipy
 	docker build -t progrium/buildstep .
 
-build-scipy:
+build-scipy: clean
 	@$(QUIET) touch ./stack/.scipy
 	docker build -t progrium/buildstep .
