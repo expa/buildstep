@@ -7,5 +7,5 @@ ADD ./stack/configs/etc-profile /etc/profile
 ADD ./stack/ /build/stack
 ADD ./builder/ /build
 
-RUN /build/stack/prepare
+RUN /build/stack/add_ons.sh
 RUN xargs -L 1 /build/install-buildpack /tmp/buildpacks < /build/config/buildpacks.txt

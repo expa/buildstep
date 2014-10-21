@@ -1,7 +1,4 @@
 #!/bin/bash
-#
-# Prepares the "stack" to run apps and the environment to run buildpacks
-#
 
 # use scipy_packages.txt if Makefile create .scipy
 [[ -e '/build/.scipy' ]] && packages_file=scipy_packages.txt || packages_file=packages.txt
