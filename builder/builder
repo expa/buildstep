@@ -66,10 +66,11 @@ setuidgid $user_name \$(eval echo \${command})
 EOF
 
 chmod +x /start
-ln -nsf /start /exec
+#ln -nsf /start /exec
+cp -fp start exec
 rm -rf $app_dir
 mv $build_root $app_dir
 
 # Clean up
-rm -rf /build/
+rm -rf /build/*
 rm -rf /tmp/*
