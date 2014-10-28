@@ -19,7 +19,7 @@ aufs:
 clean:
 	@$(QUIET) docker ps -a | awk '{ print $$1 }' | grep -v CONTAINER | xargs -r docker kill
 	@$(QUIET) docker ps -a | awk '{ print $$1 }' | grep -v CONTAINER | xargs -r docker rm -f
-	@$(QUIET) docker images -a | grep -v cedarish | awk '{ print $$3 }' | grep -v "IMAGE" | xargs -r docker rmi
+	@$(QUIET) docker images -q | xargs docker rmi -f
 
 build:
 	@$(QUIET) rm -f ./stack/.scipy
