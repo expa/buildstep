@@ -1,5 +1,5 @@
 FROM progrium/cedarish:cedar14
-MAINTAINER progrium "progrium@gmail.com"
+MAINTAINER Jeff Lindsay <progrium@gmail.com>
 ENV LC_ALL C
 ENV DEBIAN_FRONTEND noninteractive
 
