@@ -21,10 +21,10 @@ clean:
 	@$(QUIET) docker ps -a | awk '{ print $$1 }' | grep -v CONTAINER | xargs -r docker rm -f
 	@$(QUIET) docker images -q | xargs docker rmi -f
 
-build: clean
+build:
 	@$(QUIET) rm -f ./stack/.scipy
 	docker build -t progrium/buildstep .
 
-build-scipy: clean
+build-scipy:
 	@$(QUIET) touch ./stack/.scipy
 	docker build -t progrium/buildstep .
