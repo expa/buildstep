@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # use scipy_packages.txt if Makefile create .scipy
-[[ -e '/build/.scipy' ]] && packages_file=scipy_packages.txt || packages_file=packages.txt
+[[ -e '/build/stack/.scipy' ]] && packages_file=scipy_packages.txt || packages_file=packages.txt
 echo "using $packages_file to determine packages"
 
 #

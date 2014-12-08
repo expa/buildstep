@@ -22,7 +22,7 @@ unzip
 wget
 ipython
 ipython-notebook
-python-devel
+python-dev
 python-matplotlib
 python-nose
 python-numpy
