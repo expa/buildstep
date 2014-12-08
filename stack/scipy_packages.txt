@@ -1,3 +1,5 @@
+libatlas-dev
+libatlas3gf-base
 libjpeg62
 liblcms2-dev
 libpng12-0
@@ -20,6 +22,7 @@ unzip
 wget
 ipython
 ipython-notebook
+python-devel
 python-matplotlib
 python-nose
 python-numpy
