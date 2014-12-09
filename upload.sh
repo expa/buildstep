@@ -8,7 +8,7 @@ echo ""
 [[ -f /tmp/tgz ]] && rm /tmp/tgz
 ID=$(docker run -d progrium/buildstep /bin/sh)
 SHORTID=${ID:0:10}
-if [ -e './stack/.scipy' ];then
+if [ -e '/build/stack/.scipy' ];then
   DESTINATION=s3://expa-dokku/expa_scipy_buildstep_${SHORTID}.tgz
 else
   DESTINATION=s3://expa-dokku/expa_buildstep_${SHORTID}.tgz
