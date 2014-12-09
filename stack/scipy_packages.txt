@@ -1,5 +1,7 @@
+libatlas-base-dev
 libatlas-dev
 libatlas3gf-base
+libgfortran3
 libjpeg62
 liblcms2-dev
 libpng12-0
@@ -8,6 +10,16 @@ libmagickcore-dev
 libmcrypt-dev
 libsqlite3-dev
 libwebp-dev
+
+libamd2.3.1
+libblas3gf
+libc6
+libgcc1
+libgfortran3
+liblapack3gf
+libumfpack5.6.2
+libstdc++6
+
 mercurial
 mysql-client
 net-tools
@@ -29,3 +41,7 @@ python-numpy
 python-pandas
 python-scipy
 python-sympy
+
+build-essential
+gfortran
+python-all-dev
