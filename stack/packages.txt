@@ -1,3 +1,4 @@
+libffi-dev
 libjpeg62
 liblcms2-dev
 libpng12-0
